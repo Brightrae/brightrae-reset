@@ -37,7 +37,7 @@
             padding: 1rem;
         }
         
-        /* LOGO SECTION - NEW */
+        /* LOGO SECTION */
         .logo-section {
             text-align: center;
             margin: 2rem 0 1rem;
@@ -57,7 +57,7 @@
             font-style: italic;
         }
         
-        /* EXISTING HEADER ENHANCED */
+        /* HEADER */
         header {
             text-align: center;
             margin: 2rem 0;
@@ -81,7 +81,7 @@
             margin-bottom: 2rem;
         }
         
-        /* DOWNLOAD BUTTONS - ENHANCED */
+        /* DOWNLOAD BUTTONS */
         .download-buttons {
             display: flex;
             gap: 1rem;
@@ -122,6 +122,17 @@
         .btn-secondary:hover {
             background: var(--gold);
             transform: translateY(-2px);
+        }
+        
+        .mobile-link {
+            color: var(--sage);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-link:hover {
+            color: var(--gold);
         }
         
         /* SECTIONS */
@@ -170,7 +181,7 @@
             font-style: italic;
         }
         
-        /* NEW ETSY SECTION */
+        /* ETSY SECTION */
         .etsy-section {
             background: linear-gradient(135deg, rgba(135, 169, 107, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
             border: 2px solid rgba(135, 169, 107, 0.2);
@@ -198,7 +209,7 @@
             transform: translateY(-2px);
         }
         
-        /* NEW FEATURED PRODUCT SECTION */
+        /* FEATURED PRODUCT SECTION */
         .featured-product {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(247, 243, 233, 0.8) 100%);
             border: 2px solid rgba(212, 175, 55, 0.2);
@@ -228,7 +239,29 @@
             margin-bottom: 1rem;
         }
         
-        /* AUDIO SECTION ENHANCED */
+        .anticipation-text {
+            text-align: center;
+            background: rgba(135, 169, 107, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 2px solid rgba(135, 169, 107, 0.2);
+        }
+        
+        .anticipation-text h3 {
+            font-family: var(--font-head);
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .anticipation-text p {
+            color: var(--sage);
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* AUDIO SECTION */
         .audio-buttons {
             display: flex;
             gap: 1rem;
@@ -269,28 +302,49 @@
             background: rgba(247, 243, 233, 0.8);
         }
         
-        .faq-buttons {
+        .faq-item {
+            margin: 1rem 0;
+            border: 1px solid rgba(135, 169, 107, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: rgba(135, 169, 107, 0.1);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-        
-        .faq-btn {
-            background: rgba(135, 169, 107, 0.2);
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
             color: var(--dark-sage);
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(135, 169, 107, 0.3);
+            transition: background 0.3s ease;
         }
         
-        .faq-btn:hover {
-            background: var(--sage);
-            color: white;
+        .faq-question:hover {
+            background: rgba(135, 169, 107, 0.2);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-toggle.active {
+            transform: rotate(45deg);
         }
         
         /* RESPONSIVE DESIGN */
@@ -320,26 +374,26 @@
 </head>
 <body>
     <div class="container">
-        <!-- NEW LOGO SECTION -->
+        <!-- LOGO SECTION -->
         <div class="logo-section">
             <img src="Brightrae-logo.jpg" alt="Brightrae Wellness Logo" class="logo">
             <div class="brand-tagline">Science-backed wellness for your daily sanctuary</div>
         </div>
 
-        <!-- EXISTING HEADER ENHANCED -->
+        <!-- HEADER -->
         <header>
             <h1>Your SOS Calm Reset is ready 🌿</h1>
             <p class="subtitle">Print it. Play it. Feel the shift.</p>
             
             <div class="download-buttons">
-                <a href="#" class="btn btn-primary">⬇️ Download printable</a>
-                <a href="#" class="btn btn-secondary">🎧 Play audio guide</a>
+                <a href="https://drive.google.com/file/d/13pVnwvPGJnWAz70YE2BumRTt71dWo95L/view?usp=sharing" target="_blank" class="btn btn-primary">⬇️ Download printable</a>
+                <a href="#audio-section" class="btn btn-secondary">🎧 Play audio guide</a>
             </div>
             
-            <p><small>On mobile? Open uncompressed folder.</small></p>
+            <p><small>On mobile? <a href="https://drive.google.com/drive/folders/1R6Un293EUpQ33w7Jq_v5FEodV8urcPF6?usp=sharing" target="_blank" class="mobile-link">Open uncompressed folder</a>.</small></p>
         </header>
 
-        <!-- EXISTING HOW IT WORKS SECTION -->
+        <!-- HOW IT WORKS SECTION -->
         <section class="section">
             <h2>How it works</h2>
             <ul class="steps">
@@ -353,28 +407,28 @@
             </div>
         </section>
 
-        <!-- EXISTING AUDIO GUIDE SECTION -->
-        <section class="section">
+        <!-- AUDIO GUIDE SECTION -->
+        <section class="section" id="audio-section">
             <h2>Audio guide</h2>
             <div class="audio-buttons">
-                <a href="#" class="btn btn-secondary">Download MP3</a>
-                <a href="#" class="btn btn-secondary">Download WAV</a>
+                <a href="https://drive.google.com/file/d/1N_hG_TFzrytj01QHYU5cAmF46MU_Gh8M/view?usp=sharing" target="_blank" class="btn btn-secondary">Download MP3</a>
+                <a href="https://drive.google.com/file/d/1xM7aSPv-ojBI0CbHe8nB5GuUsr41nGHy/view?usp=sharing" target="_blank" class="btn btn-secondary">Download WAV</a>
             </div>
         </section>
 
-        <!-- NEW ETSY STORE SECTION -->
+        <!-- ETSY STORE SECTION -->
         <section class="section etsy-section">
             <h2>🛍️ Shop Brightrae on Etsy</h2>
             <p>Discover our complete collection of personalized wellness art, guided meditations, and ritual tools. Each piece is designed to transform your space into a sanctuary of calm and confidence.</p>
             
             <div class="etsy-cta">
-                <a href="https://www.etsy.com/shop/BrightraeStore" target="_blank" class="etsy-btn">Visit My Etsy Store</a>
+                <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4361750253&dd_referrer=https%3A%2F%2Fwww.etsy.com%2Flisting%2F4361750253%2Fmindfulness-breathing-exercise-posters" target="_blank" class="etsy-btn">Visit My Etsy Store</a>
             </div>
             
             <p><small>✨ Exclusive designs not available anywhere else</small></p>
         </section>
 
-        <!-- NEW FEATURED PRODUCT SECTION -->
+        <!-- FEATURED PRODUCT SECTION -->
         <section class="section featured-product">
             <div class="coming-soon-badge">🌟 Coming Soon</div>
             <h2>The Daily Ritual Personalized Name Affirmation Collection</h2>
@@ -394,28 +448,29 @@
                     <strong>💫 25 Affirmations:</strong> 20 daily + 5 special occasion mantras
                 </div>
                 <div class="feature-item">
-                    <strong>🎧 Exclusive Audio:</strong> Guided meditations (7-14 min) matching the daily affirmations + the 5 special occasion mantras
+                    <strong>🎧 Exclusive Audio:</strong> Guided meditations (7-14 min) via QR code
                 </div>
                 <div class="feature-item">
                     <strong>📱 Instant Download:</strong> High-res PNG + print-ready PDF
                 </div>
             </div>
             
-            <div class="etsy-cta">
-                <a href="https://www.etsy.com/shop/BrightraeStore" target="_blank" class="etsy-btn">Be First - Join Our Release List</a>
+            <div class="anticipation-text">
+                <h3>✨ Something extraordinary is coming this week ✨</h3>
+                <p>Be the first to experience the only personalized affirmation art with guided meditation on Etsy. Your daily ritual will never be the same.</p>
             </div>
             
             <p><em>The only affirmation art on Etsy that includes guided meditation audio. Science-backed colors and typography designed to reduce stress and boost confidence.</em></p>
         </section>
 
-        <!-- EXISTING LICENSE SECTION -->
+        <!-- LICENSE SECTION -->
         <section class="section license-section">
             <h2>License & use</h2>
             <p>For personal use only. Not for resale or public distribution.</p>
             <p>This is a supportive wellness tool; it is not medical advice or a device.</p>
         </section>
 
-        <!-- EXISTING BREATHING PACERS SECTION ENHANCED -->
+        <!-- BREATHING PACERS SECTION -->
         <section class="section">
             <h2>Calm • Focus • Sleep — Breathing pacers</h2>
             
@@ -441,20 +496,90 @@
             <p style="text-align: center; margin: 2rem 0;"><strong>Make calm, focus, and rest visible—and audible—every day.</strong></p>
             
             <div class="etsy-cta">
-                <a href="https://www.etsy.com/shop/BrightraeStore" target="_blank" class="btn btn-primary">Explore the set</a>
+                <a href="https://www.etsy.com/listing/4361750253/breathing-exercise-posters-audio-guides" target="_blank" class="btn btn-primary">Explore the set</a>
             </div>
         </section>
 
-        <!-- EXISTING FAQ SECTION ENHANCED -->
+        <!-- FAQ SECTION -->
         <section class="section faq-section">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-buttons">
-                <a href="#" class="faq-btn">How long does this take?</a>
-                <a href="#" class="faq-btn">Can I use it at work?</a>
-                <a href="#" class="faq-btn">Is this medical advice?</a>
-                <a href="#" class="faq-btn">Where can I get help?</a>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How quickly does this breathing technique work?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Most people feel a noticeable shift in just 30-60 seconds. The 4-second inhale, 6-second exhale pattern activates your parasympathetic nervous system almost immediately, helping you transition from stress to calm.</p>
+                </div>
             </div>
-        </section>
-    </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I use this at work or in public spaces?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! The breathing technique is discreet and can be done anywhere. Many users keep the printable on their desk or phone for quick access during stressful moments. No one will notice you're doing a breathing exercise.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this a replacement for medical treatment?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, this is a wellness tool for general stress management and relaxation. While breathing techniques are scientifically proven to help with stress, this is not medical advice or treatment. Always consult healthcare providers for medical concerns.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I need additional support or have questions?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>I'm here to help! You can reach out through my Etsy store messages or social media (@brightraestore). I love hearing how these tools are working in your daily life and I'm always happy to provide guidance.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer other wellness products?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Visit my Etsy store for personalized affirmation art, breathing exercise posters with audio guides, and coming soon - The Daily Ritual Personalized Name Affirmation Collection. Each product combines beautiful design with science-backed wellness benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other open FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-toggle').forEach(item => {
+                if (item !== toggle) {
+                    item.classList.remove('active');
+                    item.textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+    </script>
 </body>
 </html>
