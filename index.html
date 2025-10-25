@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brightrae SOS Calm Reset | Free Printable & Audio Guide</title>
     <meta name="description" content="Free printable breathing guide with audio meditation. Science-backed wellness tools for daily calm and focus.">
+    
+    <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//drive.google.com">
+    <link rel="dns-prefetch" href="//www.etsy.com">
+    
+    <!-- Optimized Font Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {    
             --sage: #87A96B;
@@ -37,20 +45,22 @@
             padding: 1rem;
         }
         
-        /* LOGO SECTION */
+        /* LOGO SECTION - Enhanced Performance */
         .logo-section {
-    text-align: center;
-    margin: 0rem 0 0.1rem;
-}
+            text-align: center;
+            margin: 0rem 0 0.1rem;
+        }
 
-.logo {
-    max-width: 550px;
-    margin-bottom: 0rem;
-}
+        .logo {
+            max-width: 550px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 0rem;
+        }
 
-.brand-tagline {
-    margin: 0rem 0 0 0;
-}
+        .brand-tagline {
+            margin: 0rem 0 0 0;
+        }
      
         /* HEADER */
         header {
@@ -76,7 +86,7 @@
             margin-bottom: 2rem;
         }
         
-        /* DOWNLOAD BUTTONS */
+        /* DOWNLOAD BUTTONS - Enhanced Performance */
         .download-buttons {
             display: flex;
             gap: 1rem;
@@ -95,6 +105,7 @@
             border: none;
             cursor: pointer;
             font-family: var(--font-body);
+            will-change: transform;
         }
         
         .btn-primary {
@@ -197,6 +208,7 @@
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(135, 169, 107, 0.3);
+            will-change: transform;
         }
         
         .etsy-btn:hover {
@@ -271,7 +283,7 @@
             border: 1px solid rgba(135, 169, 107, 0.2);
         }
         
-        /* PRODUCT GRID */
+        /* PRODUCT GRID - Enhanced Performance */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -286,13 +298,14 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);
             transition: transform 0.3s ease;
+            will-change: transform;
         }
         
         .product-card:hover {
             transform: translateY(-5px);
         }
         
-        /* FAQ SECTION */
+        /* FAQ SECTION - Enhanced Performance */
         .faq-section {
             background: rgba(247, 243, 233, 0.8);
         }
@@ -342,7 +355,7 @@
             transform: rotate(45deg);
         }
         
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE DESIGN - Enhanced */
         @media (max-width: 768px) {
             .container {
                 padding: 0.5rem;
@@ -364,14 +377,33 @@
             .product-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo {
+                max-width: 100%;
+            }
+        }
+        
+        /* Performance Optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- LOGO SECTION -->
+        <!-- LOGO SECTION - Enhanced with Performance Attributes -->
         <div class="logo-section">
-            <img src="Brightrae-logo.jpg" alt="Brightrae Wellness Logo" class="logo">
+            <img src="Brightrae-logo.jpg" 
+                 alt="Brightrae Wellness Logo" 
+                 class="logo"
+                 width="550" 
+                 height="auto"
+                 loading="eager"
+                 decoding="async">
             <div class="brand-tagline">Science-backed wellness for your daily sanctuary</div>
         </div>
 
@@ -393,7 +425,8 @@
     <div style="margin-bottom: 50px; margin-top: 30px;">
       <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" 
          target="_blank" 
-         style="display: inline-block; background: linear-gradient(135deg, #8b9d94 0%, #7a8c83 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(139, 157, 148, 0.3);">
+         rel="noopener"
+         style="display: inline-block; background: linear-gradient(135deg, #8b9d94 0%, #7a8c83 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(139, 157, 148, 0.3); will-change: transform;">
         🌿 Get Your Free Reset Now
       </a>
       <p style="font-size: 13px; color: #999; margin-top: 12px; font-style: italic;">
@@ -523,7 +556,7 @@
 </div>
     
     <div class="etsy-cta">
-        <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" target="_blank" class="etsy-btn">Explore Full Collection on Etsy</a>
+        <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" target="_blank" rel="noopener" class="etsy-btn">Explore Full Collection on Etsy</a>
     </div>
     
     <p style="text-align: center; margin: 1.5rem 0 0; color: var(--sage); font-weight: 600;">
@@ -559,7 +592,7 @@
             </div>
     
     <div class="etsy-cta">
-        <a href="https://www.etsy.com/listing/4384920333/the-daily-ritual-personalized-name?ga_search_query=Daily&ref=shop_items_search_1&pro=1&dd=1&logging_key=22e991b053bbe680caf6e5fd581c3bb528e95a38%3A4384920333" target="_blank" class="etsy-btn" style="background: var(--gold); color: #fff; font-size: 1.15em; padding: 1em 2.2em;">
+        <a href="https://www.etsy.com/listing/4384920333/the-daily-ritual-personalized-name?ga_search_query=Daily&ref=shop_items_search_1&pro=1&dd=1&logging_key=22e991b053bbe680caf6e5fd581c3bb528e95a38%3A4384920333" target="_blank" rel="noopener" class="etsy-btn" style="background: var(--gold); color: #fff; font-size: 1.15em; padding: 1em 2.2em;">
             Shop Now on Etsy
         </a>
     </div>
@@ -651,7 +684,7 @@
     </p>
     
     <div class="etsy-cta" style="text-align: center; margin: 2rem 0;">
-        <a href="https://www.etsy.com/listing/4375422348/professional-breathing-kit-therapist" target="_blank" class="btn btn-primary" style="background: var(--sage); padding: 1rem 2.5rem; font-size: 1.1em;">Get Professional Breathing Kit</a>
+        <a href="https://www.etsy.com/listing/4375422348/professional-breathing-kit-therapist" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--sage); padding: 1rem 2.5rem; font-size: 1.1em;">Get Professional Breathing Kit</a>
     </div>
 </section>
 
@@ -701,7 +734,7 @@
     </p>
     
     <div class="etsy-cta" style="text-align: center; margin: 2rem 0;">
-        <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self" target="_blank" class="btn btn-primary" style="background: var(--gold); padding: 1rem 2.5rem; font-size: 1.1em;">Get Anxiety Breathing Bundle</a>
+        <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--gold); padding: 1rem 2.5rem; font-size: 1.1em;">Get Anxiety Breathing Bundle</a>
     </div>
     
     <p style="text-align: center; margin-top: 1.5rem; color: #888; font-size: 0.9em;">
@@ -827,6 +860,7 @@
         © 2025 Brightrae Wellness · All Rights Reserved · 
         <a href="https://drive.google.com/file/d/1_a-pdhlTzTVNISqyn6GTxl-2bklydoDE/view?usp=sharing" 
            target="_blank" 
+           rel="noopener"
            style="color: var(--sage); text-decoration: none; font-weight: 600;">
            Brightrae Privacy Policy
         </a>
@@ -859,30 +893,5 @@
     }
 </script>
 
-    <script>
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const toggle = element.querySelector('.faq-toggle');
-            
-            // Close all other open FAQs
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                if (item !== answer) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.faq-toggle').forEach(item => {
-                if (item !== toggle) {
-                    item.classList.remove('active');
-                    item.textContent = '+';
-                }
-            });
-            
-            // Toggle current FAQ
-            answer.classList.toggle('active');
-            toggle.classList.toggle('active');
-            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-        }
-    </script>
 </body>
 </html>
