@@ -26,9 +26,7 @@
             --font-body: 'Open Sans', sans-serif;
         }
         
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         
         body {
             font-family: var(--font-body);
@@ -47,7 +45,142 @@
             padding: 1rem;
         }
         
-        /* LOGO SECTION - Mobile Enhanced */
+        /* ELITE CTA SYSTEM */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            min-height: 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: var(--font-body);
+            font-size: clamp(15px, 3.2vw, 17px);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease-out;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Primary CTA - Gold with high contrast */
+        .btn-primary {
+            background: var(--gold);
+            color: #1a1a1a;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+            border-color: var(--gold);
+        }
+        
+        .btn-primary:hover {
+            background: #E6C547;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.45);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary:focus {
+            outline: 3px solid rgba(212, 175, 55, 0.5);
+            outline-offset: 2px;
+        }
+        
+        /* Secondary CTA - Sage */
+        .btn-secondary {
+            background: var(--sage);
+            color: white;
+            box-shadow: 0 4px 16px rgba(135, 169, 107, 0.3);
+            border-color: var(--sage);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--dark-sage);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary:focus {
+            outline: 3px solid rgba(135, 169, 107, 0.5);
+            outline-offset: 2px;
+        }
+        
+        /* Ghost CTA - Outline only */
+        .btn-ghost {
+            background: transparent;
+            color: var(--sage);
+            border: 2px solid var(--sage);
+            box-shadow: none;
+        }
+        
+        .btn-ghost:hover {
+            background: var(--sage);
+            color: white;
+        }
+        
+        /* Loading state for external links */
+        .btn.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        
+        .btn.loading::after {
+            content: 'Opening...';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        /* CTA Microcopy */
+        .cta-microcopy {
+            font-size: clamp(12px, 2.5vw, 13px);
+            color: #999;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: var(--gold);
+            color: #1a1a1a;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
+            transform: translateY(100px);
+            transition: transform 0.3s ease-out;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        
+        .sticky-cta-dismiss {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #1a1a1a;
+            opacity: 0.7;
+        }
+        
+        /* LOGO SECTION */
         .logo-section {
             text-align: center;
             margin: 0rem 0 0.1rem;
@@ -66,90 +199,7 @@
             color: #777;
         }
      
-        /* HEADER */
-        header {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(135, 169, 107, 0.1);
-        }
-        
-        h1 {
-            font-family: var(--font-head);
-            color: var(--sage);
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(135, 169, 107, 0.1);
-            line-height: 1.2;
-        }
-        
-        .subtitle {
-            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        /* DOWNLOAD BUTTONS - Mobile Enhanced */
-        .download-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            min-height: 44px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: var(--font-body);
-            will-change: transform;
-            font-size: clamp(14px, 3.2vw, 16px);
-            touch-action: manipulation;
-        }
-        
-        .btn-primary {
-            background: var(--gold);
-            color: white;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: var(--dark-sage);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: var(--sage);
-            color: white;
-            box-shadow: 0 4px 15px rgba(135, 169, 107, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--gold);
-            transform: translateY(-2px);
-        }
-        
-        .mobile-link {
-            color: var(--sage);
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: clamp(14px, 2.8vw, 16px);
-        }
-        
-        .mobile-link:hover {
-            color: var(--gold);
-        }
-        
-        /* SECTIONS - Mobile Enhanced */
+        /* SECTIONS */
         .section {
             margin: clamp(1.5rem, 4vw, 3rem) 0;
             padding: clamp(1.2rem, 4vw, 2rem);
@@ -174,33 +224,9 @@
             line-height: 1.3;
         }
         
-        /* Enhanced Typography */
         p, li {
             font-size: clamp(14px, 3.2vw, 16px);
             line-height: 1.6;
-        }
-        
-        /* HOW IT WORKS SECTION */
-        .steps {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .steps li {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: rgba(135, 169, 107, 0.1);
-            border-radius: 10px;
-            border-left: 4px solid var(--sage);
-        }
-        
-        .science-note {
-            background: rgba(212, 175, 55, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--gold);
-            margin: 1.5rem 0;
-            font-style: italic;
         }
         
         /* ETSY SECTION */
@@ -214,28 +240,7 @@
             margin: 2rem 0;
         }
         
-        .etsy-btn {
-            background: var(--sage);
-            color: white;
-            padding: 1rem 2rem;
-            min-height: 44px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(135, 169, 107, 0.3);
-            will-change: transform;
-            font-size: clamp(14px, 3.2vw, 16px);
-            touch-action: manipulation;
-        }
-        
-        .etsy-btn:hover {
-            background: var(--gold);
-            transform: translateY(-2px);
-        }
-        
-        /* FEATURED PRODUCT SECTION */
+        /* FEATURED PRODUCT */
         .featured-product {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(247, 243, 233, 0.8) 100%);
             border: 2px solid rgba(212, 175, 55, 0.2);
@@ -265,44 +270,7 @@
             margin-bottom: 1rem;
         }
         
-        .anticipation-text {
-            text-align: center;
-            background: rgba(135, 169, 107, 0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border: 2px solid rgba(135, 169, 107, 0.2);
-        }
-        
-        .anticipation-text h3 {
-            font-family: var(--font-head);
-            color: var(--gold);
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
-            margin-bottom: 0.5rem;
-        }
-        
-        .anticipation-text p {
-            color: var(--sage);
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        /* AUDIO SECTION */
-        .audio-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-        
-        /* LICENSE SECTION */
-        .license-section {
-            background: rgba(135, 169, 107, 0.05);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-        }
-        
-        /* PRODUCT GRID - Mobile Enhanced */
+        /* PRODUCT GRID */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -317,14 +285,13 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);
             transition: transform 0.3s ease;
-            will-change: transform;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         
-        /* FAQ SECTION - Mobile Enhanced */
+        /* FAQ */
         .faq-section {
             background: rgba(247, 243, 233, 0.8);
         }
@@ -339,7 +306,7 @@
         .faq-question {
             background: rgba(135, 169, 107, 0.1);
             padding: 1rem 1.25rem;
-            min-height: 44px;
+            min-height: 48px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -353,6 +320,11 @@
         
         .faq-question:hover {
             background: rgba(135, 169, 107, 0.2);
+        }
+        
+        .faq-question:focus {
+            outline: 2px solid var(--sage);
+            outline-offset: -2px;
         }
         
         .faq-answer {
@@ -379,571 +351,612 @@
             transform: rotate(45deg);
         }
         
-        /* RESPONSIVE DESIGN - Mobile Enhanced */
+        /* LICENSE */
+        .license-section {
+            background: rgba(135, 169, 107, 0.05);
+            border: 1px solid rgba(135, 169, 107, 0.2);
+        }
+        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .container {
-                padding: 0.75rem;
-            }
+            .container { padding: 0.75rem; }
+            .section { padding: 1.25rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .logo { max-width: 100%; }
             
-            .download-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            .btn { width: 100%; max-width: 320px; }
             
-            .btn, .etsy-btn {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-            }
+            /* Show sticky CTA on mobile */
+            .sticky-cta { display: block; }
             
-            .section {
-                padding: 1.25rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo {
-                max-width: 100%;
-            }
-            
-            /* Mobile-specific hero section adjustments */
-            #freebie-tier-1 {
-                padding: 60px 16px !important;
-            }
-            
-            #freebie-tier-1 h2 {
-                font-size: clamp(26px, 6vw, 32px) !important;
-            }
-            
+            /* Hero mobile adjustments */
+            #freebie-tier-1 { padding: 60px 16px !important; }
+            #freebie-tier-1 h2 { font-size: clamp(26px, 6vw, 32px) !important; }
             #freebie-tier-1 .container div[style*="grid-template-columns: 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
+                grid-template-columns: 1fr !important; gap: 20px !important;
             }
-            
             #freebie-tier-1 div[style*="grid-template-columns: 1fr 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-                gap: 16px !important;
+                grid-template-columns: 1fr !important; gap: 16px !important;
             }
         }
         
-        /* Performance Optimizations */
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+            *, .btn, .sticky-cta { transition: none !important; animation: none !important; }
         }
         
-        /* Touch improvements */
         @media (hover: none) {
-            .btn:hover, .etsy-btn:hover, .product-card:hover {
-                transform: none;
-            }
+            .btn:hover, .product-card:hover { transform: none; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- LOGO SECTION - Enhanced with Performance Attributes -->
+        <!-- LOGO -->
         <div class="logo-section">
-            <img src="Brightrae-logo.jpg" 
-                 alt="Brightrae Wellness Logo" 
-                 class="logo"
-                 width="550" 
-                 height="auto"
-                 loading="eager"
-                 decoding="async">
+            <img src="Brightrae-logo.jpg" alt="Brightrae Wellness Logo" class="logo" width="550" height="auto" loading="eager" decoding="async">
             <div class="brand-tagline">Science-backed wellness for your daily sanctuary</div>
         </div>
 
-<section id="freebie-tier-1" class="freebie-section" style="background: linear-gradient(135deg, #f9f7f3 0%, #faf8f5 100%); padding: 80px 20px; text-align: center;">
-  
-  <div class="container" style="max-width: 900px; margin: 0 auto;">
-    
-    <!-- Hero Headline -->
-    <h2 style="font-size: 42px; font-weight: 700; color: #2a2a2a; margin-bottom: 8px; letter-spacing: -0.5px;">
-      Your Nervous System Reset 🌿
-    </h2>
-    
-    <!-- Tagline (spacing fix: reduced from 40px to 20px) -->
-    <p style="font-size: 20px; color: #6b8e7f; margin-bottom: 20px; font-style: italic; font-weight: 300;">
-      Print it. Play it. Feel the shift—anytime, anywhere.
-    </p>
+        <!-- HERO SECTION -->
+        <section id="freebie-tier-1" class="freebie-section" style="background: linear-gradient(135deg, #f9f7f3 0%, #faf8f5 100%); padding: 80px 20px; text-align: center;">
+            <div class="container" style="max-width: 900px; margin: 0 auto;">
+                
+                <h2 style="font-size: 42px; font-weight: 700; color: #2a2a2a; margin-bottom: 8px; letter-spacing: -0.5px;">
+                    Your Nervous System Reset 🌿
+                </h2>
+                
+                <p style="font-size: 20px; color: #6b8e7f; margin-bottom: 20px; font-style: italic; font-weight: 300;">
+                    Print it. Play it. Feel the shift—anytime, anywhere.
+                </p>
 
-    <!-- Single Primary CTA Button (replaces redundant download links) -->
-    <div style="margin-bottom: 50px; margin-top: 30px;">
-      <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" 
-         target="_blank" 
-         rel="noopener"
-         style="display: inline-block; background: linear-gradient(135deg, #8b9d94 0%, #7a8c83 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(139, 157, 148, 0.3); will-change: transform; min-height: 44px; touch-action: manipulation;">
-        🌿 Get Your Free Reset Now
-      </a>
-      <p style="font-size: 13px; color: #999; margin-top: 12px; font-style: italic;">
-        Instant access · Everything in one place · No signup required
-      </p>
-    </div>
-
-    <!-- What's Inside (Value Showcase - No Links, Pure Benefits) -->
-    <div style="background: white; border-radius: 12px; padding: 40px; margin-bottom: 50px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); text-align: left;">
-      
-      <h3 style="font-size: 20px; font-weight: 700; color: #2a2a2a; margin-bottom: 24px; text-align: center;">
-        What's Inside Your Reset
-      </h3>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
-        
-        <!-- Audio Options -->
-        <div style="border-left: 4px solid #c99f6e; padding-left: 16px;">
-          <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
-            🎧 Two Audio Lengths (Choose Your Pace)
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.8;">
-            <li>✓ 7-minute deep nervous system reset</li>
-            <li>✓ 3-minute quick daily calm version</li>
-            <li>✓ Available in MP3 & WAV formats</li>
-          </ul>
-        </div>
-
-        <!-- Visual Guide -->
-        <div style="border-left: 4px solid #8b9d94; padding-left: 16px;">
-          <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
-            📋 Visual Breathing Guide
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.8;">
-            <li>✓ 8×10" printable card (PNG + PDF)</li>
-            <li>✓ Perfect for desk, wall, or phone</li>
-            <li>✓ Breathing pattern: 4-in · 6-out</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div style="border-top: 1px solid #e8e6e2; padding-top: 20px;">
-        <p style="font-size: 13px; color: #999; margin: 0; font-style: italic;">
-          <strong>License:</strong> Personal use only. Not for resale or group distribution. For therapists/clinicians, a licensed edition launches soon.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- How It Works (3-Step Visual Guide) -->
-    <div style="margin-bottom: 50px;">
-      
-      <h3 style="font-size: 20px; font-weight: 700; color: #2a2a2a; margin-bottom: 40px; text-align: center;">
-        How It Works
-      </h3>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
-
-        <!-- Step 1 -->
-        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
-          <div style="font-size: 40px; margin-bottom: 16px;">📋</div>
-          <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
-            Step 1: Print or Save
-          </h4>
-          <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
-            Keep your ritual card visible—desk, bedroom, wall, or phone. Let it be your daily reminder that calm is always within reach.
-          </p>
-        </div>
-
-        <!-- Step 2 -->
-        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
-          <div style="font-size: 40px; margin-bottom: 16px;">🌬️</div>
-          <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
-            Step 2: Breathe (4 in · 6 out)
-          </h4>
-          <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
-            Longer exhales activate your parasympathetic nervous system—your body's natural "rest and restore" mode. Feel the tension melt in seconds.
-          </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
-          <div style="font-size: 40px; margin-bottom: 16px;">✨</div>
-          <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
-            Step 3: Anchor Your Mindset
-          </h4>
-          <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
-            Watch rushed mornings become grounded starts. Stressful afternoons become peaceful pauses. Restless nights become deep sleep.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Science Backing (Credibility Anchor) -->
-    <div style="background: #faf8f5; border-left: 4px solid #c99f6e; padding: 24px; border-radius: 8px; margin-bottom: 50px; text-align: left;">
-      
-      <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.8;">
-        <strong>✓ Science-Backed Results:</strong> Research shows that extended exhalations (like the 4-second inhale · 6-second exhale pattern) lower cortisol, reduce heart rate variability, and activate the parasympathetic nervous system within 90 seconds. This isn't just relaxation—it's a neurobiological reset. <em>[Lehrer 2021]</em>
-      </p>
-      
-    </div>
-
-  </div>
-
-</section>
-
-        <!-- ETSY STORE SECTION -->
-<section class="section etsy-section">
-    <h2>🛍️ Shop Brightrae on Etsy — Your Wellness Sanctuary Awaits</h2>
-    
-    <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
-        The SOS Calm Reset is just the beginning. Discover our full collection of personalized affirmation art, guided wellness tools, and ritual sets designed to transform your daily space into a sanctuary of confidence, peace, and self-love. Each piece is crafted with intention, backed by psychology, and made for real people living real lives.
-    </p>
-    
-    <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
-    <p style="margin: 0.8rem 0; color: var(--dark-sage); font-weight: 400; line-height: 1.7;">
-        <span style="font-size: 1.2em; margin-right: 0.4em;">✨</span>
-        <strong>Recommendations:</strong> <span style="font-weight: 300; color: #555;">Personalized Name Affirmations + 10-minute Guided Audio, Professional Breathing Kit, and Anxiety Breathing Guide Bundle</span>
-    </p>
-    <p style="margin: 0.8rem 0 0; color: var(--dark-sage); font-weight: 400; line-height: 1.7;">
-        <span style="font-size: 1.2em; margin-right: 0.4em;">✨</span>
-        <strong>For Gifters:</strong> <span style="font-weight: 300; color: #555;">Perfect for the wellness-focused woman in your life</span>
-    </p>
-</div>
-    
-    <div class="etsy-cta">
-        <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" target="_blank" rel="noopener" class="etsy-btn">Explore Full Collection on Etsy</a>
-    </div>
-    
-    <p style="text-align: center; margin: 1.5rem 0 0; color: var(--sage); font-weight: 600;">
-        ✨ Exclusive designs · Instant digital downloads · Science-backed wellness
-    </p>
-</section>
-
-        <!-- FEATURED PRODUCT SECTION -->
-<section class="section featured-product">
-    <div class="coming-soon-badge" style="background: var(--gold); color: #fff;">✨ Just Listed!</div>
-    <h2>The Daily Ritual Personalized Name Affirmation Collection</h2>
-    <p><strong>Bring the power of daily affirmations and custom watercolor art into your home or gift it to someone special.</strong></p>
-    
-    <div class="product-features">
-                <div class="feature-item">
-                    <strong>📐 Perfect Sizes:</strong> 8×10", 11×14", 16×20" - fits any space
+                <!-- PRIMARY CTA -->
+                <div style="margin-bottom: 50px; margin-top: 30px;">
+                    <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="btn btn-primary cta-external"
+                       aria-label="Get your free breathing reset - opens in new tab">
+                        🌿 Get Your Free Reset Now
+                    </a>
+                    <p class="cta-microcopy">
+                        Instant access • Everything in one place • Opens in new tab
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <strong>🎨 Premium Quality:</strong> 300 DPI, watercolor design with gold accents
+
+                <!-- What's Inside -->
+                <div style="background: white; border-radius: 12px; padding: 40px; margin-bottom: 50px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); text-align: left;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: #2a2a2a; margin-bottom: 24px; text-align: center;">
+                        What's Inside Your Reset
+                    </h3>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div style="border-left: 4px solid #c99f6e; padding-left: 16px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
+                                🎧 Two Audio Lengths (Choose Your Pace)
+                            </h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.8;">
+                                <li>✓ 7-minute deep nervous system reset</li>
+                                <li>✓ 3-minute quick daily calm version</li>
+                                <li>✓ Available in MP3 & WAV formats</li>
+                            </ul>
+                        </div>
+
+                        <div style="border-left: 4px solid #8b9d94; padding-left: 16px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
+                                📋 Visual Breathing Guide
+                            </h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.8;">
+                                <li>✓ 8×10" printable card (PNG + PDF)</li>
+                                <li>✓ Perfect for desk, wall, or phone</li>
+                                <li>✓ Breathing pattern: 4-in · 6-out</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid #e8e6e2; padding-top: 20px;">
+                        <p style="font-size: 13px; color: #999; margin: 0; font-style: italic;">
+                            <strong>License:</strong> Personal use only. Not for resale or group distribution. For therapists/clinicians, a licensed edition launches soon.
+                        </p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <strong>✨ Personalized:</strong> Your name beautifully integrated into elegant typography
+
+                <!-- How It Works -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: #2a2a2a; margin-bottom: 40px; text-align: center;">
+                        How It Works
+                    </h3>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+                        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
+                            <div style="font-size: 40px; margin-bottom: 16px;">📋</div>
+                            <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
+                                Step 1: Print or Save
+                            </h4>
+                            <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
+                                Keep your ritual card visible—desk, bedroom, wall, or phone. Let it be your daily reminder that calm is always within reach.
+                            </p>
+                        </div>
+
+                        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
+                            <div style="font-size: 40px; margin-bottom: 16px;">🌬️</div>
+                            <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
+                                Step 2: Breathe (4 in · 6 out)
+                            </h4>
+                            <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
+                                Longer exhales activate your parasympathetic nervous system—your body's natural "rest and restore" mode. Feel the tension melt in seconds.
+                            </p>
+                        </div>
+
+                        <div style="background: #f5f3f0; border-radius: 12px; padding: 24px; text-align: center;">
+                            <div style="font-size: 40px; margin-bottom: 16px;">✨</div>
+                            <h4 style="font-size: 16px; font-weight: 700; color: #2a2a2a; margin-bottom: 12px;">
+                                Step 3: Anchor Your Mindset
+                            </h4>
+                            <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">
+                                Watch rushed mornings become grounded starts. Stressful afternoons become peaceful pauses. Restless nights become deep sleep.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <strong>💫 25 Affirmations:</strong> 20 daily + 5 special occasion mantras
+
+                <!-- Science Backing -->
+                <div style="background: #faf8f5; border-left: 4px solid #c99f6e; padding: 24px; border-radius: 8px; margin-bottom: 50px; text-align: left;">
+                    <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.8;">
+                        <strong>✓ Science-Backed Results:</strong> Research shows that extended exhalations (like the 4-second inhale · 6-second exhale pattern) lower cortisol, reduce heart rate variability, and activate the parasympathetic nervous system within 90 seconds. This isn't just relaxation—it's a neurobiological reset. <em>[Lehrer 2021]</em>
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <strong>🎧 Exclusive Audio:</strong> Guided meditations (7-14 min)
+
+            </div>
+        </section>
+
+        <!-- ETSY STORE -->
+        <section class="section etsy-section">
+            <h2>🛍️ Shop Brightrae on Etsy — Your Wellness Sanctuary Awaits</h2>
+            
+            <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                The SOS Calm Reset is just the beginning. Discover our full collection of personalized affirmation art, guided wellness tools, and ritual sets designed to transform your daily space into a sanctuary of confidence, peace, and self-love. Each piece is crafted with intention, backed by psychology, and made for real people living real lives.
+            </p>
+            
+            <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
+                <p style="margin: 0.8rem 0; color: var(--dark-sage); font-weight: 400; line-height: 1.7;">
+                    <span style="font-size: 1.2em; margin-right: 0.4em;">✨</span>
+                    <strong>Recommendations:</strong> <span style="font-weight: 300; color: #555;">Personalized Name Affirmations + 10-minute Guided Audio, Professional Breathing Kit, and Anxiety Breathing Guide Bundle</span>
+                </p>
+                <p style="margin: 0.8rem 0 0; color: var(--dark-sage); font-weight: 400; line-height: 1.7;">
+                    <span style="font-size: 1.2em; margin-right: 0.4em;">✨</span>
+                    <strong>For Gifters:</strong> <span style="font-weight: 300; color: #555;">Perfect for the wellness-focused woman in your life</span>
+                </p>
+            </div>
+            
+            <div class="etsy-cta">
+                <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-secondary cta-external"
+                   aria-label="Explore Brightrae collection on Etsy - opens in new tab">
+                    Explore Full Collection on Etsy
+                </a>
+                <p class="cta-microcopy">Secure Etsy checkout • Instant downloads • Trusted by wellness seekers</p>
+            </div>
+            
+            <p style="text-align: center; margin: 1.5rem 0 0; color: var(--sage); font-weight: 600;">
+                ✨ Exclusive designs · Instant digital downloads · Science-backed wellness
+            </p>
+        </section>
+
+        <!-- FEATURED PRODUCT -->
+        <section class="section featured-product">
+            <div class="coming-soon-badge" style="background: var(--gold); color: #fff;">✨ Just Listed!</div>
+            <h2>The Daily Ritual Personalized Name Affirmation Collection</h2>
+            <p><strong>Bring the power of daily affirmations and custom watercolor art into your home or gift it to someone special.</strong></p>
+            
+            <div class="product-features">
+                <div class="feature-item"><strong>📐 Perfect Sizes:</strong> 8×10", 11×14", 16×20" - fits any space</div>
+                <div class="feature-item"><strong>🎨 Premium Quality:</strong> 300 DPI, watercolor design with gold accents</div>
+                <div class="feature-item"><strong>✨ Personalized:</strong> Your name beautifully integrated into elegant typography</div>
+                <div class="feature-item"><strong>💫 25 Affirmations:</strong> 20 daily + 5 special occasion mantras</div>
+                <div class="feature-item"><strong>🎧 Exclusive Audio:</strong> Guided meditations (7-14 min)</div>
+                <div class="feature-item"><strong>📱 Instant Download:</strong> High-res PNG + print-ready PDF</div>
+            </div>
+            
+            <div class="etsy-cta">
+                <a href="https://www.etsy.com/listing/4384920333/the-daily-ritual-personalized-name?ga_search_query=Daily&ref=shop_items_search_1&pro=1&dd=1&logging_key=22e991b053bbe680caf6e5fd581c3bb528e95a38%3A4384920333" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-primary cta-external"
+                   aria-label="Personalize your Daily Ritual collection on Etsy - opens in new tab">
+                    Personalize Yours on Etsy
+                </a>
+                <p class="cta-microcopy">Custom name included • Instant download • Opens in Etsy</p>
+            </div>
+            
+            <div style="text-align:center; margin-top: 1.5rem; color: var(--sage); font-weight: 600;">
+                Personalize yours or send the perfect gift, every order helps brighten someone's daily ritual.
+            </div>
+            <p style="margin-top:1.3rem;"><em>Trusted by wellness seekers and self-growth fans worldwide.<br>
+            Make your space and mindset shine, starting today.</em></p>
+        </section>
+
+        <!-- LICENSE -->
+        <section class="section license-section">
+            <h2>License & Use</h2>
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="background: rgba(255, 255, 255, 0.6); padding: 1.2rem; border-radius: 10px; border-left: 4px solid var(--sage);">
+                    <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">✓ <strong>For your personal use</strong></p>
+                    <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">These tools are created for your own wellness journey. Share the benefits with friends, but please don't resale or redistribute the files publicly.</p>
                 </div>
-                <div class="feature-item">
-                    <strong>📱 Instant Download:</strong> High-res PNG + print-ready PDF
+                <div style="background: rgba(255, 255, 255, 0.6); padding: 1.2rem; border-radius: 10px; border-left: 4px solid var(--gold);">
+                    <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">✓ <strong>Not medical advice</strong></p>
+                    <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">Brightrae is a supportive wellness tool designed to complement your self-care practice, not a medical treatment or device. If you have health concerns, please consult a healthcare provider.</p>
+                </div>
+                <div style="background: rgba(135, 169, 107, 0.05); padding: 1.2rem; border-radius: 10px; border-left: 4px solid #999;">
+                    <p style="margin: 0; color: #666; font-size: 0.9em; font-style: italic;"><strong>Questions?</strong> Reach out to brightraewellness@gmail.com or message me on Etsy. I'm here to support your wellness journey. 🌿</p>
                 </div>
             </div>
-    
-    <div class="etsy-cta">
-        <a href="https://www.etsy.com/listing/4384920333/the-daily-ritual-personalized-name?ga_search_query=Daily&ref=shop_items_search_1&pro=1&dd=1&logging_key=22e991b053bbe680caf6e5fd581c3bb528e95a38%3A4384920333" target="_blank" rel="noopener" class="etsy-btn" style="background: var(--gold); color: #fff; font-size: 1.15em; padding: 1em 2.2em;">
-            Shop Now on Etsy
-        </a>
-    </div>
-    <div style="text-align:center; margin-top: 1.5rem; color: var(--sage); font-weight: 600;">
-        Personalize yours or send the perfect gift, every order helps brighten someone's daily ritual.
-    </div>
-    <p style="margin-top:1.3rem;"><em>Trusted by wellness seekers and self-growth fans worldwide.<br>
-    Make your space and mindset shine, starting today.</em></p>
-    
-</section>
+        </section>
 
-        <!-- LICENSE SECTION -->
-<section class="section license-section">
-    <h2>License & Use</h2>
-    
-    <div style="display: grid; gap: 1.5rem;">
-        <div style="background: rgba(255, 255, 255, 0.6); padding: 1.2rem; border-radius: 10px; border-left: 4px solid var(--sage);">
-            <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">
-                ✓ <strong>For your personal use</strong>
+        <!-- PROFESSIONAL KIT -->
+        <section class="section" style="background: linear-gradient(135deg, rgba(135, 169, 107, 0.08) 0%, rgba(212, 175, 55, 0.08) 100%); border: 2px solid rgba(135, 169, 107, 0.15);">
+            <h2>🩺 Professional Breathing Kit — Licensed Tools for Therapists & Mental Health Professionals</h2>
+            
+            <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                Empower your clients with a complete, science-backed breathing toolkit they can use between sessions and beyond. This professionally designed collection includes six proven breathing techniques, audio guides, printable handouts, and progress trackers; everything you need to integrate breathwork seamlessly into your therapeutic practice.
             </p>
-            <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">
-                These tools are created for your own wellness journey. Share the benefits with friends, but please don't resale or redistribute the files publicly.
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">🎧 6 Audio Guides</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">Professionally recorded 6-8 minute sessions for each technique (MP3 & WAV)</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">🖼️ Office Prints</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">11×14 wall art (PNG & PDF) for therapy spaces—beautiful & educational</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">📄 Client Handouts</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">8×10 practice cards to send home with clients after sessions</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">📱 Digital Guides</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">Vertical smartphone format (9:16) perfect for teletherapy & client portals</p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
+                <p style="margin: 0; color: var(--dark-sage); font-weight: 600; font-size: 1.05em;">✨ Six Essential Techniques Included:</p>
+                <ul style="margin: 0.8rem 0 0; padding-left: 1.5rem; color: #555; line-height: 1.7;">
+                    <li><strong>Diaphragmatic (Belly) Breathing</strong> — Foundation for deep relaxation</li>
+                    <li><strong>4-Count Breathing</strong> — Easy-to-learn instant calming</li>
+                    <li><strong>4-7-8 Breathing</strong> — Promotes sleep & reduces anxiety</li>
+                    <li><strong>Coherent Breathing</strong> — Balances heart, lungs & mind</li>
+                    <li><strong>Box Breathing</strong> — Focus & stress reduction</li>
+                    <li><strong>4-4-8 Breathing</strong> — Extended exhalation for deep calm</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(135, 169, 107, 0.08); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--sage);">
+                <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">🎁 BONUS: Weekly Progress Tracker & Therapist License</p>
+                <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">Editable PDF journal (8×10) for clients to track practice, mood, and progress + clear therapist usage rights documentation.</p>
+            </div>
+            
+            <p style="text-align: center; margin: 2rem 0; font-weight: 600; color: var(--sage); font-size: 1.05em;">
+                Perfect for in-person sessions, teletherapy, or hybrid practices
+            </p>
+            
+            <div class="etsy-cta">
+                <a href="https://www.etsy.com/listing/4375422348/professional-breathing-kit-therapist" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-primary cta-external"
+                   aria-label="Get Professional Breathing Kit for therapists - opens in new tab">
+                    Get Professional Toolkit
+                </a>
+                <p class="cta-microcopy">Therapist license included • Ready-to-use materials • Opens in Etsy</p>
+            </div>
+        </section>
+
+        <!-- ANXIETY BUNDLE -->
+        <section class="section" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(135, 169, 107, 0.08) 100%); border: 2px solid rgba(212, 175, 55, 0.2);">
+            <h2>💆‍♀️ Anxiety Breathing Guide Bundle — Transform Stress Into Strength</h2>
+            
+            <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                Anxiety doesn't wait for permission—and your relief shouldn't either. This all-in-one bundle combines breathwork, personalized affirmations, and guided audio to help you move from overwhelm to grounded calm, anytime you need it. Whether you're managing daily stress, sleepless nights, or emotional triggers, this toolkit gives you science-backed strategies that work.
+            </p>
+            
+            <div style="background: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
+                <p style="margin: 0; color: var(--dark-sage); font-weight: 600; font-size: 1.05em;">🌿 Three Complete Themes for Every Emotional Need:</p>
+                <ul style="margin: 0.8rem 0 0; padding-left: 1.5rem; color: #555; line-height: 1.7;">
+                    <li><strong>Anxiety Relief (4-6 rhythm)</strong> — Longer exhale to activate calm</li>
+                    <li><strong>Compassion (5-5 balanced)</strong> — Heart-centered breathing for self-love</li>
+                    <li><strong>Confidence (4-2-4 power)</strong> — Energizing rhythm to boost self-trust</li>
+                </ul>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">📝 Editable Posters</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">Customize with your name & chosen affirmation (8×10 & 11×14)</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🎧 3-Minute Audio Guides</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">Soothing audio per theme (MP3 & WAV) for breathwork + affirmations</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🖼️ Ready-to-Print Art</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">High-resolution PNGs for instant home or professional printing</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🧠 Science Summary</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95em;">Research-backed benefits of breathing + affirmation psychology</p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(135, 169, 107, 0.08); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--sage);">
+                <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">🎁 BONUS: 30 Affirmation Collection (10 per theme)</p>
+                <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">Choose your mantra, paste it into the custom template, and create deeply personal art in minutes. Perfect for daily use, therapy support, or gift-giving.</p>
+            </div>
+            
+            <p style="text-align: center; margin: 2rem 0; font-weight: 600; color: var(--sage); font-size: 1.05em;">
+                Instant digital download · Lifetime access · Works alongside therapy
+            </p>
+            
+            <div class="etsy-cta">
+                <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-primary cta-external"
+                   aria-label="Get Anxiety Breathing Bundle - opens in new tab">
+                    Get Anxiety Bundle
+                </a>
+                <p class="cta-microcopy">30 affirmations included • Editable templates • Opens in Etsy</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 1.5rem; color: #888; font-size: 0.9em;">
+                <em>"The most powerful tool for anxiety relief is already within you—this bundle teaches you how to use it."</em>
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <p style="font-size: 1em; color: #666; margin-bottom: 2rem; text-align: center;">
+                <em>Questions about our breathing techniques, printables, audio guides, or products? Find answers below.</em>
+            </p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>How quickly does this breathing technique work?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Most people feel a noticeable shift in just 30–60 seconds. Longer exhalations (like the 4-second inhale, 6-second exhale pattern) activate your parasympathetic nervous system almost immediately, lowering cortisol and helping you transition from stress to calm. Some users report feeling the difference after just one cycle.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>Can I use this at work or in public spaces?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! The breathing techniques are discreet and can be done anywhere—at your desk, during a meeting, on public transport, or in a waiting room. Many users keep a printable on their desk or save it on their phone for quick access. You can breathe calmly without anyone noticing. The beauty of breathwork is that it's a private reset that happens in plain sight.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>What file formats do I receive, and can I print them?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! All our printables come in multiple formats: high-resolution PNG (for screen sharing, digital use), PDF (print-ready, no quality loss), and sometimes editable PDFs (for customization). Audio guides are provided in both MP3 (universal, smaller file size) and WAV (high-quality, lossless audio). You can print everything immediately after download—no special software needed.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>I'm a therapist—can I use these with my clients?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our <strong>Professional Breathing Kit</strong> is specifically designed for therapists, counselors, coaches, and mental health professionals. It includes a clear therapist license outlining your rights to use these materials in your practice—whether in-person, teletherapy, or hybrid. The kit comes in multiple formats: office wall art, client handouts, digital guides for teletherapy, and editable templates. Clients can also take printables home as session takeaways or add audio guides to their personal practice.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>What's the difference between your products?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>SOS Calm Reset:</strong> A free entry point with one core technique, perfect for beginners.<br>
+                    <strong>Breathing Pacers:</strong> Three designs (calm, focus, sleep) with 1-minute audio guides—great for ongoing daily practice.<br>
+                    <strong>Professional Breathing Kit:</strong> Six techniques with progress trackers, therapist license, and multi-format files—designed for mental health professionals.<br>
+                    <strong>Anxiety Breathing Bundle:</strong> Three themes (Anxiety Relief, Compassion, Confidence) with 30 customizable affirmations + audio—ideal for personal anxiety management.<br>
+                    <strong>Daily Ritual Affirmation Art:</strong> Personalized with your name, combines affirmations with guided meditation—the ultimate ritual piece.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>Can I customize the printables or add my own text?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our <strong>Anxiety Breathing Bundle</strong> includes editable PDF templates—you can add your name, favorite affirmations, or custom text in minutes. The <strong>Daily Ritual Collection</strong> is fully personalized with your name during purchase. Non-editable printables are designed to be beautiful and ready-to-use as-is, but many customers use design tools like Canva or Adobe to customize further if they'd like.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>Is this a replacement for medical treatment?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No. Brightrae tools are supportive wellness resources for stress management, relaxation, and daily grounding—not medical advice, treatment, or devices. While breathing techniques are scientifically proven to reduce anxiety, they complement but do not replace professional mental health care or medical treatment. If you have clinical anxiety, depression, PTSD, or other mental health concerns, please work with a qualified healthcare provider. Our tools work beautifully *alongside* therapy, not instead of it.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>Do I get lifetime access to my files?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Once you purchase, all digital files are yours to keep forever. You can download them immediately, save them to your device, and access them anytime. There are no subscriptions or recurring fees—you pay once and own the product. We also recommend backing up your files to cloud storage (Google Drive, Dropbox) for extra security.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>What if I need additional support or have questions?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>I'm here to help! You can reach out through my Etsy store messages, direct message me on Instagram or TikTok @brightraewellness, or email me at brightraewellness@gmail.com. I love hearing how these tools are transforming your daily practice and I'm always happy to answer questions, offer guidance, or troubleshoot any technical issues. Your wellness journey matters to me.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" onkeydown="handleFAQKeydown(event, this)">
+                    <span>Do you offer other wellness products?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our full Etsy collection includes personalized affirmation art, breathing exercise posters with audio guides, the Professional Breathing Kit for therapists, the Anxiety Breathing Bundle with customizable affirmations, and the Daily Ritual Personalized Name Affirmation Collection. Each product combines beautiful design with science-backed wellness psychology. Browse our complete collection on Etsy or visit the full lineup on our landing page.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA RECOVERY -->
+        <section class="section" style="background: rgba(135, 169, 107, 0.08); text-align: center; border: 2px solid rgba(135, 169, 107, 0.15);">
+            <h2 style="margin-bottom: 1rem;">Ready to Begin Your Calm Journey?</h2>
+            <p style="margin-bottom: 2rem; color: #555;">Start with the free SOS Calm Reset, then explore our complete wellness collection.</p>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-primary cta-external"
+                   aria-label="Get your free reset - opens Google Drive in new tab">
+                    🌿 Start Free Reset
+                </a>
+                
+                <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="btn btn-ghost cta-external"
+                   aria-label="Browse all wellness products - opens Etsy in new tab">
+                    Browse All Products
+                </a>
+            </div>
+            
+            <p class="cta-microcopy" style="margin-top: 1rem;">Trusted by wellness seekers worldwide • Science-backed results</p>
+        </section>
+
+        <!-- PRIVACY -->
+        <div style="text-align: center; margin-top: 2.5rem; padding: 1.5rem 0; border-top: 1px solid rgba(135, 169, 107, 0.2); font-size: 0.95em; color: #666;">
+            <p style="margin: 0;">
+                © 2025 Brightrae Wellness · All Rights Reserved · 
+                <a href="https://drive.google.com/file/d/1_a-pdhlTzTVNISqyn6GTxl-2bklydoDE/view?usp=sharing" 
+                   target="_blank" 
+                   rel="noopener"
+                   style="color: var(--sage); text-decoration: none; font-weight: 600;">
+                   Brightrae Privacy Policy
+                </a>
             </p>
         </div>
+    </div>
+
+    <!-- STICKY MOBILE CTA -->
+    <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" 
+       target="_blank" 
+       rel="noopener"
+       class="sticky-cta cta-external"
+       id="stickyCTA"
+       aria-label="Get your free reset - opens in new tab">
+        🌿 Get Free Reset
+        <button class="sticky-cta-dismiss" onclick="dismissStickyCTA(event)" aria-label="Dismiss this notification">
+            ×
+        </button>
+    </a>
+
+    <script>
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) item.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.faq-toggle').forEach(item => {
+                if (item !== toggle) {
+                    item.classList.remove('active');
+                    item.textContent = '+';
+                }
+            });
+            
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
         
-        <div style="background: rgba(255, 255, 255, 0.6); padding: 1.2rem; border-radius: 10px; border-left: 4px solid var(--gold);">
-            <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">
-                ✓ <strong>Not medical advice</strong>
-            </p>
-            <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">
-                Brightrae is a supportive wellness tool designed to complement your self-care practice, not a medical treatment or device. If you have health concerns, please consult a healthcare provider.
-            </p>
-        </div>
-        
-        <div style="background: rgba(135, 169, 107, 0.05); padding: 1.2rem; border-radius: 10px; border-left: 4px solid var(--sage); border-left: 4px solid #999;">
-            <p style="margin: 0; color: #666; font-size: 0.9em; font-style: italic;">
-                <strong>Questions?</strong> Reach out to brightraewellness@gmail.com or message me on Etsy. I'm here to support your wellness journey. 🌿
-            </p>
-        </div>
-    </div>
-</section>
-
-        <!-- PROFESSIONAL BREATHING KIT SECTION -->
-<section class="section" style="background: linear-gradient(135deg, rgba(135, 169, 107, 0.08) 0%, rgba(212, 175, 55, 0.08) 100%); border: 2px solid rgba(135, 169, 107, 0.15);">
-    <h2>🩺 Professional Breathing Kit — Licensed Tools for Therapists & Mental Health Professionals</h2>
-    
-    <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
-        Empower your clients with a complete, science-backed breathing toolkit they can use between sessions and beyond. This professionally designed collection includes six proven breathing techniques, audio guides, printable handouts, and progress trackers; everything you need to integrate breathwork seamlessly into your therapeutic practice.
-    </p>
-    
-    <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">🎧 6 Audio Guides</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">Professionally recorded 6-8 minute sessions for each technique (MP3 & WAV)</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">🖼️ Office Prints</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">11×14 wall art (PNG & PDF) for therapy spaces—beautiful & educational</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">📄 Client Handouts</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">8×10 practice cards to send home with clients after sessions</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--sage); font-size: 1.2em; margin: 0 0 0.8rem;">📱 Digital Guides</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">Vertical smartphone format (9:16) perfect for teletherapy & client portals</p>
-        </div>
-    </div>
-    
-    <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
-        <p style="margin: 0; color: var(--dark-sage); font-weight: 600; font-size: 1.05em;">✨ Six Essential Techniques Included:</p>
-        <ul style="margin: 0.8rem 0 0; padding-left: 1.5rem; color: #555; line-height: 1.7;">
-            <li><strong>Diaphragmatic (Belly) Breathing</strong> — Foundation for deep relaxation</li>
-            <li><strong>4-Count Breathing</strong> — Easy-to-learn instant calming</li>
-            <li><strong>4-7-8 Breathing</strong> — Promotes sleep & reduces anxiety</li>
-            <li><strong>Coherent Breathing</strong> — Balances heart, lungs & mind</li>
-            <li><strong>Box Breathing</strong> — Focus & stress reduction</li>
-            <li><strong>4-4-8 Breathing</strong> — Extended exhalation for deep calm</li>
-        </ul>
-    </div>
-    
-    <div style="background: rgba(135, 169, 107, 0.08); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--sage);">
-        <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">🎁 BONUS: Weekly Progress Tracker & Therapist License</p>
-        <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">Editable PDF journal (8×10) for clients to track practice, mood, and progress + clear therapist usage rights documentation.</p>
-    </div>
-    
-    <p style="text-align: center; margin: 2rem 0; font-weight: 600; color: var(--sage); font-size: 1.05em;">
-        Perfect for in-person sessions, teletherapy, or hybrid practices
-    </p>
-    
-    <div class="etsy-cta" style="text-align: center; margin: 2rem 0;">
-        <a href="https://www.etsy.com/listing/4375422348/professional-breathing-kit-therapist" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--sage); padding: 1rem 2.5rem; font-size: 1.1em;">Get Professional Breathing Kit</a>
-    </div>
-</section>
-
-        <!-- ANXIETY BREATHING GUIDE BUNDLE SECTION -->
-<section class="section" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(135, 169, 107, 0.08) 100%); border: 2px solid rgba(212, 175, 55, 0.2);">
-    <h2>💆‍♀️ Anxiety Breathing Guide Bundle — Transform Stress Into Strength</h2>
-    
-    <p style="font-size: 1.05em; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
-        Anxiety doesn't wait for permission—and your relief shouldn't either. This all-in-one bundle combines breathwork, personalized affirmations, and guided audio to help you move from overwhelm to grounded calm, anytime you need it. Whether you're managing daily stress, sleepless nights, or emotional triggers, this toolkit gives you science-backed strategies that work.
-    </p>
-    
-    <div style="background: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--gold);">
-        <p style="margin: 0; color: var(--dark-sage); font-weight: 600; font-size: 1.05em;">🌿 Three Complete Themes for Every Emotional Need:</p>
-        <ul style="margin: 0.8rem 0 0; padding-left: 1.5rem; color: #555; line-height: 1.7;">
-            <li><strong>Anxiety Relief (4-6 rhythm)</strong> — Longer exhale to activate calm</li>
-            <li><strong>Compassion (5-5 balanced)</strong> — Heart-centered breathing for self-love</li>
-            <li><strong>Confidence (4-2-4 power)</strong> — Energizing rhythm to boost self-trust</li>
-        </ul>
-    </div>
-    
-    <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">📝 Editable Posters</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">Customize with your name & chosen affirmation (8×10 & 11×14)</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🎧 3-Minute Audio Guides</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">Soothing audio per theme (MP3 & WAV) for breathwork + affirmations</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🖼️ Ready-to-Print Art</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">High-resolution PNGs for instant home or professional printing</p>
-        </div>
-        <div class="product-card" style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1);">
-            <h3 style="color: var(--gold); font-size: 1.2em; margin: 0 0 0.5rem;">🧠 Science Summary</h3>
-            <p style="margin: 0; color: #555; font-size: 0.95em;">Research-backed benefits of breathing + affirmation psychology</p>
-        </div>
-    </div>
-    
-    <div style="background: rgba(135, 169, 107, 0.08); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid var(--sage);">
-        <p style="margin: 0; color: var(--dark-sage); font-weight: 600;">🎁 BONUS: 30 Affirmation Collection (10 per theme)</p>
-        <p style="margin: 0.5rem 0 0; color: #555; font-size: 0.95em;">Choose your mantra, paste it into the custom template, and create deeply personal art in minutes. Perfect for daily use, therapy support, or gift-giving.</p>
-    </div>
-    
-    <p style="text-align: center; margin: 2rem 0; font-weight: 600; color: var(--sage); font-size: 1.05em;">
-        Instant digital download · Lifetime access · Works alongside therapy
-    </p>
-    
-    <div class="etsy-cta" style="text-align: center; margin: 2rem 0;">
-        <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--gold); padding: 1rem 2.5rem; font-size: 1.1em;">Get Anxiety Breathing Bundle</a>
-    </div>
-    
-    <p style="text-align: center; margin-top: 1.5rem; color: #888; font-size: 0.9em;">
-        <em>"The most powerful tool for anxiety relief is already within you—this bundle teaches you how to use it."</em>
-    </p>
-</section>
-
-        <!-- FAQ SECTION -->
-<section class="section faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <p style="font-size: 1em; color: #666; margin-bottom: 2rem; text-align: center;">
-        <em>Questions about our breathing techniques, printables, audio guides, or products? Find answers below.</em>
-    </p>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>How quickly does this breathing technique work?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Most people feel a noticeable shift in just 30–60 seconds. Longer exhalations (like the 4-second inhale, 6-second exhale pattern) activate your parasympathetic nervous system almost immediately, lowering cortisol and helping you transition from stress to calm. Some users report feeling the difference after just one cycle.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>Can I use this at work or in public spaces?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Absolutely! The breathing techniques are discreet and can be done anywhere—at your desk, during a meeting, on public transport, or in a waiting room. Many users keep a printable on their desk or save it on their phone for quick access. You can breathe calmly without anyone noticing. The beauty of breathwork is that it's a private reset that happens in plain sight.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>What file formats do I receive, and can I print them?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Yes! All our printables come in multiple formats: high-resolution PNG (for screen sharing, digital use), PDF (print-ready, no quality loss), and sometimes editable PDFs (for customization). Audio guides are provided in both MP3 (universal, smaller file size) and WAV (high-quality, lossless audio). You can print everything immediately after download—no special software needed.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>I'm a therapist—can I use these with my clients?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Yes! Our <strong>Professional Breathing Kit</strong> is specifically designed for therapists, counselors, coaches, and mental health professionals. It includes a clear therapist license outlining your rights to use these materials in your practice—whether in-person, teletherapy, or hybrid. The kit comes in multiple formats: office wall art, client handouts, digital guides for teletherapy, and editable templates. Clients can also take printables home as session takeaways or add audio guides to their personal practice.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>What's the difference between your products?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p><strong>SOS Calm Reset:</strong> A free entry point with one core technique, perfect for beginners.<br>
-            <strong>Breathing Pacers:</strong> Three designs (calm, focus, sleep) with 1-minute audio guides—great for ongoing daily practice.<br>
-            <strong>Professional Breathing Kit:</strong> Six techniques with progress trackers, therapist license, and multi-format files—designed for mental health professionals.<br>
-            <strong>Anxiety Breathing Bundle:</strong> Three themes (Anxiety Relief, Compassion, Confidence) with 30 customizable affirmations + audio—ideal for personal anxiety management.<br>
-            <strong>Daily Ritual Affirmation Art:</strong> Personalized with your name, combines affirmations with guided meditation—the ultimate ritual piece.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>Can I customize the printables or add my own text?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Yes! Our <strong>Anxiety Breathing Bundle</strong> includes editable PDF templates—you can add your name, favorite affirmations, or custom text in minutes. The <strong>Daily Ritual Collection</strong> is fully personalized with your name during purchase. Non-editable printables are designed to be beautiful and ready-to-use as-is, but many customers use design tools like Canva or Adobe to customize further if they'd like.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>Is this a replacement for medical treatment?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>No. Brightrae tools are supportive wellness resources for stress management, relaxation, and daily grounding—not medical advice, treatment, or devices. While breathing techniques are scientifically proven to reduce anxiety, they complement but do not replace professional mental health care or medical treatment. If you have clinical anxiety, depression, PTSD, or other mental health concerns, please work with a qualified healthcare provider. Our tools work beautifully *alongside* therapy, not instead of it.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do I get lifetime access to my files?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Yes! Once you purchase, all digital files are yours to keep forever. You can download them immediately, save them to your device, and access them anytime. There are no subscriptions or recurring fees—you pay once and own the product. We also recommend backing up your files to cloud storage (Google Drive, Dropbox) for extra security.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>What if I need additional support or have questions?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>I'm here to help! You can reach out through my Etsy store messages, direct message me on Instagram or TikTok @brightraewellness, or email me at brightraewellness@gmail.com. I love hearing how these tools are transforming your daily practice and I'm always happy to answer questions, offer guidance, or troubleshoot any technical issues. Your wellness journey matters to me.</p>
-        </div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do you offer other wellness products?</span>
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            <p>Yes! Our full Etsy collection includes personalized affirmation art, breathing exercise posters with audio guides, the Professional Breathing Kit for therapists, the Anxiety Breathing Bundle with customizable affirmations, and the Daily Ritual Personalized Name Affirmation Collection. Each product combines beautiful design with science-backed wellness psychology. Browse our complete collection on Etsy or visit the full lineup on our landing page.</p>
-        </div>
-    </div>
-</section>
-
-        <!-- PRIVACY POLICY LINE -->
-<div style="text-align: center; margin-top: 2.5rem; padding: 1.5rem 0; border-top: 1px solid rgba(135, 169, 107, 0.2); font-size: 0.95em; color: #666;">
-    <p style="margin: 0;">
-        © 2025 Brightrae Wellness · All Rights Reserved · 
-        <a href="https://drive.google.com/file/d/1_a-pdhlTzTVNISqyn6GTxl-2bklydoDE/view?usp=sharing" 
-           target="_blank" 
-           rel="noopener"
-           style="color: var(--sage); text-decoration: none; font-weight: 600;">
-           Brightrae Privacy Policy
-        </a>
-    </p>
-</div>
-       
-<script>
-    function toggleFAQ(element) {
-        const answer = element.nextElementSibling;
-        const toggle = element.querySelector('.faq-toggle');
-        
-        // Close all other open FAQs
-        document.querySelectorAll('.faq-answer').forEach(item => {
-            if (item !== answer) {
-                item.classList.remove('active');
+        function handleFAQKeydown(event, element) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleFAQ(element);
             }
-        });
+        }
         
-        document.querySelectorAll('.faq-toggle').forEach(item => {
-            if (item !== toggle) {
-                item.classList.remove('active');
-                item.textContent = '+';
+        // Sticky CTA logic
+        let stickyCTADismissed = false;
+        const stickyCTA = document.getElementById('stickyCTA');
+        const heroSection = document.getElementById('freebie-tier-1');
+        
+        function showStickyCTA() {
+            if (stickyCTADismissed) return;
+            const scrollY = window.scrollY;
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            // Show after scrolling past 25% of hero, hide when hero CTA is visible
+            if (scrollY > heroBottom * 0.25 && scrollY > windowHeight * 0.5) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
             }
-        });
+        }
         
-        // Toggle current FAQ
-        answer.classList.toggle('active');
-        toggle.classList.toggle('active');
-        toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-    }
-</script>
-
+        function dismissStickyCTA(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            stickyCTADismissed = true;
+            stickyCTA.classList.remove('visible');
+            localStorage.setItem('brightrae-sticky-dismissed', 'true');
+        }
+        
+        // External link loading feedback
+        function addLoadingFeedback() {
+            document.querySelectorAll('.cta-external').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    this.classList.add('loading');
+                    setTimeout(() => this.classList.remove('loading'), 1500);
+                });
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if sticky CTA was previously dismissed
+            if (localStorage.getItem('brightrae-sticky-dismissed')) {
+                stickyCTADismissed = true;
+            }
+            
+            window.addEventListener('scroll', showStickyCTA);
+            addLoadingFeedback();
+        });
+    </script>
 </body>
 </html>
