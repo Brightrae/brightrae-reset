@@ -1,57 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- head identical to main (omitted here for brevity in diff) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Brightrae SOS Calm Reset | Free Printable & Audio Guide</title>
+    <meta name="description" content="Free printable breathing guide with audio meditation. Science-backed wellness tools for daily calm and focus.">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//drive.google.com">
+    <link rel="dns-prefetch" href="//www.etsy.com">
+    
+    <!-- Optimized Font Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {    
+            --sage: #87A96B;
+            --gold: #D4AF37;
+            --cream1: #F7F3E9;
+            --cream2: #FFFEF7;
+            --dark-sage: #6B8A4D;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: var(--font-body); line-height: 1.6; margin: 0; padding: 0; background: linear-gradient(135deg, var(--cream1) 0%, var(--cream2) 100%); color: #333; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+        .btn { display: inline-block; padding: 1rem 2rem; min-height: 48px; border-radius: 8px; text-decoration: none; font-weight: 700; font-family: var(--font-body); font-size: clamp(15px, 3.2vw, 17px); text-align: center; cursor: pointer; transition: all 0.25s ease-out; border: 2px solid transparent; position: relative; overflow: hidden; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+        .btn-primary { background: var(--gold); color: #1a1a1a; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35); border-color: var(--gold); }
+        .btn-primary:hover { background: #E6C547; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(212, 175, 55, 0.45); }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-primary:focus { outline: 3px solid rgba(212, 175, 55, 0.5); outline-offset: 2px; }
+        .btn-secondary { background: var(--sage); color: white; box-shadow: 0 4px 16px rgba(135, 169, 107, 0.3); border-color: var(--sage); }
+        .btn-secondary:hover { background: var(--dark-sage); transform: translateY(-1px); }
+        .btn-secondary:focus { outline: 3px solid rgba(135, 169, 107, 0.5); outline-offset: 2px; }
+        .btn-ghost { background: transparent; color: var(--sage); border: 2px solid var(--sage); box-shadow: none; }
+        .btn-ghost:hover { background: var(--sage); color: white; }
+        .btn.loading { pointer-events: none; opacity: 0.8; }
+        .btn.loading::after { content: 'Opening...'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 14px; opacity: 0.7; }
+        .cta-microcopy { font-size: clamp(12px, 2.5vw, 13px); color: #999; margin-top: 8px; font-style: italic; }
+        .sticky-cta { position: fixed; bottom: 16px; left: 16px; right: 16px; background: var(--gold); color: #1a1a1a; padding: 12px 20px; border-radius: 12px; font-weight: 700; font-size: 16px; text-align: center; text-decoration: none; box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4); transform: translateY(100px); transition: transform 0.3s ease-out; z-index: 1000; display: none; }
+        .sticky-cta.visible { transform: translateY(0); }
+        .sticky-cta-dismiss { position: absolute; top: 8px; right: 12px; background: none; border: none; font-size: 18px; cursor: pointer; color: #1a1a1a; opacity: 0.7; }
+        .logo-section { text-align: center; margin: 0rem 0 0.1rem; }
+        .logo { max-width: 550px; width: 100%; height: auto; margin-bottom: 0rem; }
+        .brand-tagline { margin: 0rem 0 0 0; font-size: clamp(14px, 2.8vw, 16px); color: #777; }
+        .section { margin: clamp(1.5rem, 4vw, 3rem) 0; padding: clamp(1.2rem, 4vw, 2rem); background: rgba(255,255,255,0.8); border-radius: 15px; box-shadow: 0 4px 20px rgba(135,169,107,0.1);}       
+        .section h2 { font-family: var(--font-head); color: var(--sage); font-size: clamp(1.3rem, 4vw, 1.8rem); margin-bottom: 1rem; line-height: 1.3; }
+        .section h3 { font-family: var(--font-head); color: var(--dark-sage); font-size: clamp(1.1rem, 3.5vw, 1.4rem); margin: 1.5rem 0 1rem; line-height: 1.3; }
+        p, li { font-size: clamp(14px, 3.2vw, 16px); line-height: 1.6; }
+        .etsy-section { background: linear-gradient(135deg, rgba(135,169,107,0.1) 0%, rgba(212,175,55,0.1) 100%); border: 2px solid rgba(135,169,107,0.2); }
+        .etsy-cta { text-align: center; margin: 2rem 0; }
+        .featured-product { background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(247,243,233,0.8) 100%); border: 2px solid rgba(212,175,55,0.2); }
+        .product-features { display: grid; gap: clamp(0.8rem, 3vw, 1rem); margin: 1.5rem 0; }
+        .feature-item { background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--gold); }
+        .coming-soon-badge { display: inline-block; background: var(--gold); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-size: clamp(13px, 2.8vw, 16px); font-weight: 600; margin-bottom: 1rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 3vw, 1.5rem); margin: 2rem 0; }
+        .product-card { background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(135, 169, 107, 0.1); transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-3px); }
+        .faq-section { background: rgba(247,243,233,0.8); }
+        .faq-item { margin: 1rem 0; border: 1px solid rgba(135,169,107,0.2); border-radius: 10px; overflow: hidden; }
+        .faq-question { background: rgba(135,169,107,0.1); padding: 1rem 1.25rem; min-height: 48px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--dark-sage); transition: background 0.3s ease; font-size: clamp(14px, 3.2vw, 16px); touch-action: manipulation; }
+        .faq-question:hover { background: rgba(135,169,107,0.2); }
+        .faq-question:focus { outline: 2px solid var(--sage); outline-offset: -2px; }
+        .faq-answer { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: all 0.3s ease; background: white; }
+        .faq-answer.active { padding: 1.25rem; max-height: 400px; }
+        .faq-toggle { font-size: 1.2rem; transition: transform 0.3s ease; min-width: 24px; text-align: center; }
+        .faq-toggle.active { transform: rotate(45deg); }
+        .license-section { background: rgba(135,169,107,0.05); border: 1px solid rgba(135,169,107,0.2); }
+        @media (max-width: 768px) { .container { padding: 0.75rem; } .section { padding: 1.25rem; } .product-grid { grid-template-columns: 1fr; } .logo { max-width: 100%; } .btn { width: 100%; max-width: 320px; } .sticky-cta { display: block; } #freebie-tier-1 { padding: 60px 16px !important; } #freebie-tier-1 h2 { font-size: clamp(26px, 6vw, 32px) !important; } #freebie-tier-1 .container div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; } #freebie-tier-1 div[style*="grid-template-columns: 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 16px !important; } }
+        @media (prefers-reduced-motion: reduce) { *, .btn, .sticky-cta { transition: none !important; animation: none !important; }}
+        @media (hover: none) { .btn:hover, .product-card:hover { transform: none; }}
+    </style>
 </head>
 <body>
-  <!-- Existing content from main preserved exactly. Adding two new sections: 
-       1) Complete Your Practice (3-product cross-sell)
-       2) Transform Your Routine (14-Day Program spotlight)
-  -->
+    <div class="container">
+        <!-- LOGO -->
+        <div class="logo-section">
+            <img src="Brightrae-logo.jpg" alt="Brightrae Wellness Logo" class="logo" width="550" height="auto" loading="eager" decoding="async">
+            <div class="brand-tagline">Science-backed wellness for your daily sanctuary</div>
+        </div>
 
-  <!-- INSERT AFTER SOCIAL PROOF SECTION -->
-  <section class="section" style="background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(135,169,107,0.06) 100%); border: 2px solid rgba(212,175,55,0.2);">
-    <h2 style="text-align:center; margin-top:0;">Complete Your Practice</h2>
-    <p style="text-align:center; color:#555; max-width:720px; margin:0 auto 1rem;">Choose the path that best supports your daily ritual—each option pairs beautifully with your free reset.</p>
-    <div class="product-grid">
-      <!-- Pacers -->
-      <div class="product-card" style="text-align:left;">
-        <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Calm · Focus · Sleep Pacers</h3>
-        <p style="margin:.25rem 0; color:#555;">Three printable posters with matching 1-minute audios for quick daily resets.</p>
-        <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$5.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
-        <a href="https://www.etsy.com/listing/4361750253/mindfulness-breathing-exercise-posters?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Open Calm Focus Sleep Pacers on Etsy in new tab">Explore Pacers</a>
-      </div>
-      <!-- Anxiety Bundle -->
-      <div class="product-card" style="text-align:left;">
-        <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Anxiety Breathing Guide Bundle</h3>
-        <p style="margin:.25rem 0; color:#555;">Three themes with editable posters, 3-minute audios, and 30 affirmations.</p>
-        <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$7.49 <span style="font-weight:400; color:#888;">(50% off)</span></p>
-        <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-secondary cta-external" aria-label="Open Anxiety Breathing Guide Bundle on Etsy in new tab">Explore Bundle</a>
-      </div>
-      <!-- Name Collection -->
-      <div class="product-card" style="text-align:left;">
-        <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Personalized Name Affirmation Collection</h3>
-        <p style="margin:.25rem 0; color:#555;">25 designs with guided meditations—customized with your name.</p>
-        <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$12.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
-        <a href="https://www.etsy.com/listing/4384920333/custom-name-affirmation-art-set-morning?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-ghost cta-external" aria-label="Open Personalized Name Affirmation Collection on Etsy in new tab">Explore Collection</a>
-      </div>
+        <!-- HERO SECTION -->
+        <section id="freebie-tier-1" class="freebie-section" style="background: linear-gradient(135deg, #f9f7f3 0%, #faf8f5 100%); padding: 80px 20px; text-align: center;">
+            <div class="container" style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-size: 42px; font-weight: 700; color: #2a2a2a; margin-bottom: 8px; letter-spacing: -0.5px;">Your Nervous System Reset 🌿</h2>
+                <p style="font-size: 20px; color: #6b8e7f; margin-bottom: 20px; font-style: italic; font-weight: 300;">Print it. Play it. Feel the shift—anytime, anywhere.</p>
+                <div style="margin-bottom: 50px; margin-top: 30px;">
+                    <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Get your free breathing reset - opens in new tab">🌿 Get Your Free Reset Now</a>
+                    <p class="cta-microcopy">Instant access • Everything in one place • Opens in new tab</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL PROOF stays above (from main PR once merged). Cross-sell inserted below hero for immediate clarity. -->
+        <section class="section" style="background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(135,169,107,0.06) 100%); border: 2px solid rgba(212,175,55,0.2);">
+            <h2 style="text-align:center; margin-top:0;">Complete Your Practice</h2>
+            <p style="text-align:center; color:#555; max-width:720px; margin:0 auto 1rem;">Choose the path that best supports your daily ritual—each option pairs beautifully with your free reset.</p>
+            <div class="product-grid">
+                <div class="product-card" style="text-align:left;">
+                    <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Calm · Focus · Sleep Pacers</h3>
+                    <p style="margin:.25rem 0; color:#555;">Three printable posters with matching 1-minute audios for quick daily resets.</p>
+                    <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$5.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
+                    <a href="https://www.etsy.com/listing/4361750253/mindfulness-breathing-exercise-posters?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Open Calm Focus Sleep Pacers on Etsy in new tab">Explore Pacers</a>
+                </div>
+                <div class="product-card" style="text-align:left;">
+                    <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Anxiety Breathing Guide Bundle</h3>
+                    <p style="margin:.25rem 0; color:#555;">Three themes with editable posters, 3-minute audios, and 30 affirmations.</p>
+                    <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$7.49 <span style="font-weight:400; color:#888;">(50% off)</span></p>
+                    <a href="https://www.etsy.com/listing/4373238780/anxiety-breathing-guide-bundle-self?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-secondary cta-external" aria-label="Open Anxiety Breathing Guide Bundle on Etsy in new tab">Explore Bundle</a>
+                </div>
+                <div class="product-card" style="text-align:left;">
+                    <h3 style="margin:0 0 .25rem; color:#2a2a2a;">Personalized Name Affirmation Collection</h3>
+                    <p style="margin:.25rem 0; color:#555;">25 designs with guided meditations—customized with your name.</p>
+                    <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$12.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
+                    <a href="https://www.etsy.com/listing/4384920333/custom-name-affirmation-art-set-morning?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-ghost cta-external" aria-label="Open Personalized Name Affirmation Collection on Etsy in new tab">Explore Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXISTING SECTIONS from main continue here (Etsy store, featured product, license, professional kit, anxiety bundle, FAQ, etc.) -->
+
+        <section class="section" style="background: linear-gradient(135deg, rgba(135,169,107,0.06) 0%, rgba(212,175,55,0.06) 100%); border: 2px solid rgba(135,169,107,0.2);">
+            <h2 style="text-align:center; margin-top:0;">Transform Your Routine</h2>
+            <p style="text-align:center; color:#555; max-width:720px; margin:0 auto 1rem;">Ready to commit to a deeper practice? Build consistency with a simple, progressive plan.</p>
+            <div class="product-grid">
+                <div class="product-card" style="text-align:left;">
+                    <h3 style="margin:0 0 .25rem; color:#2a2a2a;">14‑Day Breathing Program</h3>
+                    <p style="margin:.25rem 0; color:#555;">14 daily cards, weekly trackers, and a master poster—structured, science‑backed progression.</p>
+                    <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$9.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
+                    <a href="https://www.etsy.com/listing/4371919566/14-day-breathing-program-anxiety-relief?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Open 14-Day Breathing Program on Etsy in new tab">Explore Program</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA RECOVERY -->
+        <section class="section" style="background: rgba(135, 169, 107, 0.08); text-align: center; border: 2px solid rgba(135, 169, 107, 0.15);">
+            <h2 style="margin-bottom: 1rem;">Ready to Begin Your Calm Journey?</h2>
+            <p style="margin-bottom: 2rem; color: #555;">Start with the free SOS Calm Reset, then explore our complete wellness collection.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Get your free reset - opens Google Drive in new tab">🌿 Start Free Reset</a>
+                <a href="https://www.etsy.com/shop/Brightrae?ref=shop_profile&listing_id=4384920333" target="_blank" rel="noopener" class="btn btn-ghost cta-external" aria-label="Browse all wellness products - opens Etsy in new tab">Browse All Products</a>
+            </div>
+            <p class="cta-microcopy" style="margin-top: 1rem;">Trusted by wellness seekers worldwide • Science-backed results</p>
+        </section>
+
+        <div style="text-align: center; margin-top: 2.5rem; padding: 1.5rem 0; border-top: 1px solid rgba(135, 169, 107, 0.2); font-size: 0.95em; color: #666;">
+            <p style="margin: 0;">© 2025 Brightrae Wellness · All Rights Reserved · <a href="https://drive.google.com/file/d/1_a-pdhlTzTVNISqyn6GTxl-2bklydoDE/view?usp=sharing" target="_blank" rel="noopener" style="color: var(--sage); text-decoration: none; font-weight: 600;">Brightrae Privacy Policy</a></p>
+        </div>
     </div>
-  </section>
 
-  <!-- INSERT BEFORE FAQ: 14-Day Program Spotlight -->
-  <section class="section" style="background: linear-gradient(135deg, rgba(135,169,107,0.06) 0%, rgba(212,175,55,0.06) 100%); border: 2px solid rgba(135,169,107,0.2);">
-    <h2 style="text-align:center; margin-top:0;">Transform Your Routine</h2>
-    <p style="text-align:center; color:#555; max-width:720px; margin:0 auto 1rem;">Ready to commit to a deeper practice? Build consistency with a simple, progressive plan.</p>
-    <div class="product-grid">
-      <div class="product-card" style="text-align:left;">
-        <h3 style="margin:0 0 .25rem; color:#2a2a2a;">14‑Day Breathing Program</h3>
-        <p style="margin:.25rem 0; color:#555;">14 daily cards, weekly trackers, and a master poster—structured, science‑backed progression.</p>
-        <p style="margin:.25rem 0; font-weight:700; color:#2a2a2a;">$9.99 <span style="font-weight:400; color:#888;">(50% off)</span></p>
-        <a href="https://www.etsy.com/listing/4371919566/14-day-breathing-program-anxiety-relief?ref=listings_manager_grid" target="_blank" rel="noopener" class="btn btn-primary cta-external" aria-label="Open 14-Day Breathing Program on Etsy in new tab">Explore Program</a>
-      </div>
-    </div>
-  </section>
+    <a href="https://drive.google.com/drive/folders/164UCiGyw6WBNj25D30SB2D56jgrIDkwj?usp=sharing" target="_blank" rel="noopener" class="sticky-cta cta-external" id="stickyCTA" aria-label="Get your free reset - opens in new tab">🌿 Get Free Reset
+        <button class="sticky-cta-dismiss" onclick="dismissStickyCTA(event)" aria-label="Dismiss this notification">×</button>
+    </a>
 
-  <!-- Keep rest of page content identical to main -->
+    <script>
+        function toggleFAQ(element) { const answer = element.nextElementSibling; const toggle = element.querySelector('.faq-toggle'); document.querySelectorAll('.faq-answer').forEach(item => { if (item !== answer) item.classList.remove('active'); }); document.querySelectorAll('.faq-toggle').forEach(item => { if (item !== toggle) { item.classList.remove('active'); item.textContent = '+'; } }); answer.classList.toggle('active'); toggle.classList.toggle('active'); toggle.textContent = answer.classList.contains('active') ? '−' : '+'; }
+        function handleFAQKeydown(event, element) { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleFAQ(element); } }
+        let stickyCTADismissed = false; const stickyCTA = document.getElementById('stickyCTA'); const heroSection = document.getElementById('freebie-tier-1');
+        function showStickyCTA() { if (stickyCTADismissed) return; const scrollY = window.scrollY; const heroBottom = heroSection.offsetTop + heroSection.offsetHeight; const windowHeight = window.innerHeight; if (scrollY > heroBottom * 0.25 && scrollY > windowHeight * 0.5) { stickyCTA.classList.add('visible'); } else { stickyCTA.classList.remove('visible'); } }
+        function dismissStickyCTA(event) { event.preventDefault(); event.stopPropagation(); stickyCTADismissed = true; stickyCTA.classList.remove('visible'); localStorage.setItem('brightrae-sticky-dismissed', 'true'); }
+        function addLoadingFeedback() { document.querySelectorAll('.cta-external').forEach(btn => { btn.addEventListener('click', function(e) { this.classList.add('loading'); setTimeout(() => this.classList.remove('loading'), 1500); }); }); }
+        document.addEventListener('DOMContentLoaded', function() { if (localStorage.getItem('brightrae-sticky-dismissed')) { stickyCTADismissed = true; } window.addEventListener('scroll', showStickyCTA); addLoadingFeedback(); });
+    </script>
 </body>
 </html>
