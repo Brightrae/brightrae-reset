@@ -507,7 +507,33 @@
                 </div>
 
             </div>
+           
         </section>
+<section id="email-capture" class="email-capture-section">
+  <h2>Get Your 7-Day Ritual Starter Kit</h2>
+  <p>Sign up to receive your complete 7-day ritual system instantly—science-backed, stress-relieving, and free.</p>
+  <form id="brightrae-capture" method="POST" action="https://hook.us2.make.com/f27jpps8glsesxatmyyreaisq5q7q2y7">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email address" required>
+    <button type="submit">Send Me My 7-Day Ritual System</button>
+  </form>
+  <div id="success-message" style="display:none;">
+    <h3>✨ Success!</h3>
+    <p>Your 7-Day Ritual System is on its way to your inbox.</p>
+  </div>
+</section>
+<script>
+document.getElementById('brightrae-capture').addEventListener('submit', function(e) {
+  e.preventDefault();
+  fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this)
+  }).then(() => {
+    this.style.display = 'none';
+    document.getElementById('success-message').style.display = 'block';
+  });
+});
+</script>
 
         <!-- ETSY STORE -->
         <section class="section etsy-section">
