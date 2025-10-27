@@ -795,6 +795,16 @@
         gap: 12px;
     }
 }
+    .email-capture-section.success-only {
+    padding: 40px 20px;
+    min-height: auto;
+}
+
+.success-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 </style>
 
 <script>
@@ -833,14 +843,43 @@ document.getElementById('brightrae-capture').addEventListener('submit', function
 
 <script>
 document.getElementById('brightrae-capture').addEventListener('submit', function(e) {
-  e.preventDefault();
-  fetch(this.action, {
-    method: 'POST',
-    body: new FormData(this)
-  }).then(() => {
-    this.style.display = 'none';
-    document.getElementById('success-message').style.display = 'block';
-  });
+    e.preventDefault();
+    
+    // Show loading state
+    const btn = this.querySelector('.capture-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="btn-text">Sending...</span>';
+    btn.disabled = true;
+    
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        // Hide the entire form wrapper AND header content
+        document.querySelector('.capture-header').style.display = 'none';
+        document.querySelector('.benefits-grid').style.display = 'none';
+        this.parentElement.style.display = 'none';
+        
+        // Show success message
+        document.getElementById('success-message').style.display = 'block';
+        
+        // Adjust container size for success message only
+        document.querySelector('.capture-container').style.maxWidth = '500px';
+        document.querySelector('.capture-container').style.margin = '20px auto';
+        
+        // Smooth scroll to success message
+        document.getElementById('success-message').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    }).catch(error => {
+        // Reset button on error
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+    });
 });
 </script>
 
