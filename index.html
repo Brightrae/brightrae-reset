@@ -823,40 +823,6 @@ document.getElementById('brightrae-capture').addEventListener('submit', function
         method: 'POST',
         body: formData
     }).then(response => {
-        // Hide form, show success message
-        this.parentElement.style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        
-        // Smooth scroll to success message
-        document.getElementById('success-message').scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center' 
-        });
-    }).catch(error => {
-        // Reset button on error
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        alert('Something went wrong. Please try again.');
-    });
-});
-</script>
-
-<script>
-document.getElementById('brightrae-capture').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Show loading state
-    const btn = this.querySelector('.capture-btn');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<span class="btn-text">Sending...</span>';
-    btn.disabled = true;
-    
-    const formData = new FormData(this);
-    
-    fetch(this.action, {
-        method: 'POST',
-        body: formData
-    }).then(response => {
         // Hide the entire form wrapper AND header content
         document.querySelector('.capture-header').style.display = 'none';
         document.querySelector('.benefits-grid').style.display = 'none';
